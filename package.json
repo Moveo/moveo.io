@@ -1,0 +1,32 @@
+{
+  "name": "moveo.io",
+  "version": "0.0.0",
+  "description": "Business page",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')",
+    "start": "DEBUG=moveo:bigpipe node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Swaagie/moveo.io.git"
+  },
+  "keywords": [
+    "business",
+    "product",
+    "service",
+    "features"
+  ],
+  "author": "Martijn Swaagman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Swaagie/moveo.io/issues"
+  },
+  "homepage": "https://github.com/Swaagie/moveo.io",
+  "dependencies": {
+    "bigpipe": "^0.5.2",
+    "connect": "^2.15.0",
+    "debug": "^0.8.1",
+    "handlebars": "^2.0.0-alpha.2"
+  }
+}
