@@ -7,7 +7,7 @@ var BigPipe = require('bigpipe')
 // Expose default highlight pagelet.
 //
 exports.highlight = BigPipe.Pagelet.extend({
-  css: [path.join(__dirname, 'highlight/css.styl')],
+  css: path.join(__dirname, 'highlight/css.styl'),
   view: path.join(__dirname, 'highlight/view.hbs'),
 
   data: {},
@@ -21,7 +21,7 @@ exports.highlight = BigPipe.Pagelet.extend({
 // Expose default showcase pagelet.
 //
 exports.showcase = BigPipe.Pagelet.extend({
-  css: [path.join(__dirname, 'showcase/css.styl')],
+  css: path.join(__dirname, 'showcase/css.styl'),
   view: path.join(__dirname, 'showcase/view.hbs'),
 
   data: {},
