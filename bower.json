@@ -1,0 +1,31 @@
+{
+  "name": "moveo.io",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "http://moveo.io/",
+  "authors": [
+    "Swaagie <info@martijnswaagman.nl>"
+  ],
+  "description": "Business page",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "business",
+    "services",
+    "products",
+    "features"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.styl": "~3.0.0"
+  }
+}

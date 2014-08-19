@@ -17,6 +17,9 @@ var pipe = BigPipe.createServer(port, {
       view: 'views/main.hbs',
       pagelets: 'pagelets',
       dependencies: [
+        '//fonts.googleapis.com/css?family=Montserrat:400,700',
+        '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
+        'bower_components/normalize.styl/normalize.styl',
         'base/css.styl'
       ]
     }).on(module)
