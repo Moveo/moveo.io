@@ -25,8 +25,9 @@
   "homepage": "https://github.com/Swaagie/moveo.io",
   "dependencies": {
     "bigpipe": "0.7.x",
-    "connect": "3.0.x",
     "debug": "1.0.x",
-    "handlebars": "2.0.x"
+    "handlebars": "2.0.x",
+    "serve-favicon": "2.0.x",
+    "serve-static": "1.5.x"
   }
 }

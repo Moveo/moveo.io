@@ -2,7 +2,8 @@
 
 var path = require('path')
   , BigPipe = require('bigpipe')
-  , connect = require('connect')
+  , serveStatic = require('serve-static')
+  , serveFavicon = require('serve-favicon')
   , debug = require('debug')('moveo:bigpipe')
   , port = process.env.PORT || 8080;
 
@@ -10,12 +11,15 @@ var path = require('path')
 // Initialise the BigPipe server.
 //
 var pipe = BigPipe.createServer(port, {
-  dist: __dirname + '/dist',
+  dist: path.join(__dirname, 'dist'),
   pages: [
     BigPipe.Page.extend({
-      view: __dirname + '/views/main.hbs',
-      pagelets: __dirname + '/pagelets'
-    })
+      view: 'views/main.hbs',
+      pagelets: 'pagelets',
+      dependencies: [
+        'base/css.styl'
+      ]
+    }).on(module)
   ]
 });
 
@@ -23,8 +27,8 @@ var pipe = BigPipe.createServer(port, {
 // Add middleware.
 //
 pipe
-  .before(connect.static(path.join(__dirname, 'public')))
-  .before(connect.favicon(path.join(__dirname, 'public', 'favicon.png')));
+  .before(serveStatic(path.join(__dirname, 'public')))
+  .before(serveFavicon(path.join(__dirname, 'public', 'favicon.png')));
 
 //
 // Listen for errors and the listen event.

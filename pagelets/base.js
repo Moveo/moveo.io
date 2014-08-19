@@ -1,13 +1,13 @@
 'use strict';
 
-var BigPipe = require('BigPipe');
+var BigPipe = require('bigpipe');
 
 //
 // Expose default highlight pagelet.
 //
-exports.highlight = BigPipe.pagelet.extend({
-  css: 'highlight.styl',
-  view: 'highlight.hbs',
+exports.highlight = BigPipe.Pagelet.extend({
+  css: 'highlight/css.styl',
+  view: 'highlight/view.hbs',
 
   data: {
     background: '',
@@ -22,9 +22,9 @@ exports.highlight = BigPipe.pagelet.extend({
 //
 // Expose default showcase pagelet.
 //
-exports.showcase = BigPipe.pagelet.extend({
-  css: 'showcase.styl',
-  view: 'showcase.hbs',
+exports.showcase = BigPipe.Pagelet.extend({
+  css: 'showcase/css.styl',
+  view: 'showcase/view.hbs',
 
   data: {
     message: 'Web development'
