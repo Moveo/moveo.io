@@ -1,36 +1,32 @@
 'use strict';
 
-var BigPipe = require('bigpipe');
+var BigPipe = require('bigpipe')
+  , path = require('path');
 
 //
 // Expose default highlight pagelet.
 //
 exports.highlight = BigPipe.Pagelet.extend({
-  css: 'highlight/css.styl',
-  view: 'highlight/view.hbs',
+  css: [path.join(__dirname, 'highlight/css.styl')],
+  view: path.join(__dirname, 'highlight/view.hbs'),
 
-  data: {
-    background: '',
-    message: 'Web development'
-  },
+  data: {},
 
   get: function get(render) {
     render(null, this.data);
   }
-}).on(module);
+});
 
 //
 // Expose default showcase pagelet.
 //
 exports.showcase = BigPipe.Pagelet.extend({
-  css: 'showcase/css.styl',
-  view: 'showcase/view.hbs',
+  css: [path.join(__dirname, 'showcase/css.styl')],
+  view: path.join(__dirname, 'showcase/view.hbs'),
 
-  data: {
-    message: 'Web development'
-  },
+  data: {},
 
   get: function get(render) {
     render(null, this.data);
   }
-}).on(module);
+});

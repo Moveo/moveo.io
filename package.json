@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=testing ./node_modules/.bin/mocha $(find test -name '*.test.js')",
-    "start": "DEBUG=moveo:bigpipe node index.js"
+    "start": "DEBUG=moveo:bigpipe node index.js",
+    "install": "bin/install"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,8 @@
     "handlebars": "2.0.x",
     "serve-favicon": "2.0.x",
     "serve-static": "1.5.x"
+  },
+  "devDependencies": {
+    "less": "^1.7.4"
   }
 }

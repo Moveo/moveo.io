@@ -12,14 +12,20 @@ var path = require('path')
 //
 var pipe = BigPipe.createServer(port, {
   dist: path.join(__dirname, 'dist'),
+
+  //
+  // Single webpage design, simply respond to all GET requests on /
+  //
   pages: [
     BigPipe.Page.extend({
       view: 'views/main.hbs',
       pagelets: 'pagelets',
       dependencies: [
-        '//fonts.googleapis.com/css?family=Montserrat:400,700',
         '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-        'bower_components/normalize.styl/normalize.styl',
+        '//fonts.googleapis.com/css?family=Montserrat:400,700',
+        '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css',
+        'bower_components/normalize-css/normalize.css',
+        'base/grid.css',
         'base/css.styl'
       ]
     }).on(module)

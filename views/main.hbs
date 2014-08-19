@@ -11,9 +11,19 @@
   <meta name="author" content="Martijn Swaagman">
   <link rel="shortcut icon" href="/favicon.png">
 </head>
-<body class="container">
+<body class="container-fluid">
+  <nav class="row">
+    <section class="logo col-lg-1">
+      <img src="/image/logo.png" class="img-responsive">
+    </section>
+    <div data-pagelet="highlight-web" class="col-lg-2"></div>
+    <div data-pagelet="highlight-data" class="col-lg-2"></div>
+    <div data-pagelet="highlight-performance" class="col-lg-2"></div>
+    <div data-pagelet="highlight-nodejs" class="col-lg-2"></div>
+    <div data-pagelet="highlight-consultancy" class="col-lg-2"></div>
+  </nav>
   <header>
-    <h1>How can we help you?</h1>
+
     <article data-pagelet="development">Web development</article>
     <article data-pagelet="data-analysis">Data visualization and analysis</article>
     <article data-pagelet="performance">Application performance</article>
