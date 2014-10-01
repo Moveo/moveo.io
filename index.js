@@ -16,8 +16,9 @@ var pipe = BigPipe.createServer(port, {
   //
   // Single webpage design, simply respond to all GET requests on /
   //
-  pages: [
-    BigPipe.Page.extend({
+  pagelets: [
+    BigPipe.Pagelet.extend({
+      path: '/',
       view: 'views/main.hbs',
       pagelets: 'pagelets',
       dependencies: [
