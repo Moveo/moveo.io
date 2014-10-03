@@ -16,8 +16,8 @@ var pipe = BigPipe.createServer(port, {
   //
   // Single webpage design, simply respond to all GET requests on /
   //
-  pagelets: [
-    BigPipe.Pagelet.extend({
+  pagelets: {
+    base: BigPipe.Pagelet.extend({
       path: '/',
       view: 'views/main.hbs',
       pagelets: 'pagelets',
@@ -30,7 +30,7 @@ var pipe = BigPipe.createServer(port, {
         'base/css.styl'
       ]
     }).on(module)
-  ]
+  }
 });
 
 //
