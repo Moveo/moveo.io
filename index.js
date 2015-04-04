@@ -49,5 +49,5 @@ bigpipe.on('error', function error(err) {
 });
 
 bigpipe.once('listening', function listening() {
-  debug('Moveo.io is running on %j', this.server.address());
+  debug('Moveo.io is running on %j', this._server.address());
 });
