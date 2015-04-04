@@ -1,12 +1,12 @@
 'use strict';
 
-var BigPipe = require('bigpipe')
+var Pagelet = require('pagelet')
   , path = require('path');
 
 //
 // Expose default highlight pagelet.
 //
-exports.highlight = BigPipe.Pagelet.extend({
+exports.highlight = Pagelet.extend({
   css: path.join(__dirname, 'highlight/css.styl'),
   view: path.join(__dirname, 'highlight/view.hbs'),
 
@@ -20,7 +20,7 @@ exports.highlight = BigPipe.Pagelet.extend({
 //
 // Expose default showcase pagelet.
 //
-exports.showcase = BigPipe.Pagelet.extend({
+exports.showcase = Pagelet.extend({
   css: path.join(__dirname, 'showcase/css.styl'),
   view: path.join(__dirname, 'showcase/view.hbs'),
 

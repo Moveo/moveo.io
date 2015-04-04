@@ -1,23 +1,24 @@
 'use strict';
 
-var path = require('path')
-  , BigPipe = require('bigpipe')
-  , serveStatic = require('serve-static')
+var debug = require('diagnostics')('moveo')
   , serveFavicon = require('serve-favicon')
-  , debug = require('debug')('moveo:bigpipe')
-  , port = process.env.PORT || 8080;
+  , serveStatic = require('serve-static')
+  , BigPipe = require('bigpipe')
+  , Pagelet = require('pagelet')
+  , path = require('path')
+  , bigpipe;
 
 //
 // Initialise the BigPipe server.
 //
-var pipe = BigPipe.createServer(port, {
+bigpipe = BigPipe.createServer(process.env.PORT || 8080, {
   dist: path.join(__dirname, 'dist'),
 
   //
   // Single webpage design, simply respond to all GET requests on /
   //
   pagelets: {
-    base: BigPipe.Pagelet.extend({
+    base: Pagelet.extend({
       path: '/',
       view: 'views/main.hbs',
       pagelets: 'pagelets',
@@ -36,17 +37,17 @@ var pipe = BigPipe.createServer(port, {
 //
 // Add middleware.
 //
-pipe
-  .before(serveStatic(path.join(__dirname, 'public')))
-  .before(serveFavicon(path.join(__dirname, 'public', 'favicon.png')));
+bigpipe
+  .middleware.use(serveStatic(path.join(__dirname, 'public')))
+  .middleware.use(serveFavicon(path.join(__dirname, 'public', 'favicon.png')));
 
 //
 // Listen for errors and the listen event.
 //
-pipe.on('error', function error(err) {
+bigpipe.on('error', function error(err) {
   debug('Server received an error: %s', err.message);
 });
 
-pipe.once('listening', function listening() {
-  debug('Moveo.io is running on http://localhost:%d', port);
+bigpipe.once('listening', function listening() {
+  debug('Moveo.io is running on %j', this.server.address());
 });
