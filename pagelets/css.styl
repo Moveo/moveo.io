@@ -1,8 +1,8 @@
-$blue = #3498db
-$grey = #2B2B2B
+@import 'pagelets/defaults'
 
 body
   background-color: white
+  color: $grey
   font-family: Montserrat, sans-serif
   font-size: 16px
   line-height: 1.5em
@@ -24,6 +24,11 @@ main
   section
     height: 100vh
     width: 100vw
+
+footer
+  background-color: $lightgrey
+  color: white
+  min-height: 10em
 
 [data-pagelet="menu"]
   absolute: top 55px left 150px

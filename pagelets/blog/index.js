@@ -2,7 +2,7 @@
 
 module.exports = require('../showcase').extend({
   data: {
-    ref: 'products',
-    title: 'Products'
+    ref: 'blog',
+    title: 'Background articles from our blog'
   }
 });

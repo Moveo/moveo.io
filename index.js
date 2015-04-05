@@ -20,15 +20,15 @@ bigpipe = BigPipe.createServer(process.env.PORT || 8080, {
   pagelets: {
     base: Pagelet.extend({
       path: '/',
-      view: 'views/main.hbs',
+      view: 'pagelets/main.hbs',
       pagelets: 'pagelets',
       dependencies: [
         '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
         '//fonts.googleapis.com/css?family=Montserrat:400,700',
         '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css',
         'bower_components/normalize-css/normalize.css',
-        'base/grid.css',
-        'base/css.styl'
+        'pagelets/grid.css',
+        'pagelets/css.styl'
       ]
     }).on(module)
   }
@@ -46,6 +46,7 @@ bigpipe
 //
 bigpipe.on('error', function error(err) {
   debug('Server received an error: %s', err.message);
+  process.exit(0);
 });
 
 bigpipe.once('listening', function listening() {

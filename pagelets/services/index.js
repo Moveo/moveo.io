@@ -1,8 +1,8 @@
 'use strict';
 
-require('../base').showcase.extend({
+module.exports = require('../showcase').extend({
   data: {
     ref: 'services',
     title: 'Services'
   }
-}).on(module);
+});
