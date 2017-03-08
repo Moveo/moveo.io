@@ -1,5 +1,7 @@
 # Moveo.io
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Swaagie/moveo.io.svg)](https://greenkeeper.io/)
+
 Business page
 
 ### Installation
